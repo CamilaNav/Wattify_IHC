@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Wattify - Home</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Wattify" name="keywords">
+    <meta content="Empieza a ahorrar hoy" name="description">
+
+    <!-- Favicon -->
+    <link href="assets/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Poppins&display=swap" rel="stylesheet">
+   
+
+    <!-- Libraries Stylesheet -->
+    <link href="assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="assets/styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet --> 
+    <link href="assets/styles/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid px-5 d-none d-lg-block">
+        <div class="row gx-5 py-3 align-items-center">
+            <div class="col-lg-3">
+                <div class="d-flex align-items-center justify-content-start">       
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="d-flex align-items-center justify-content-center">
+                    <a href="index.html" class="navbar-brand ms-lg-5">
+                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">Wattify</span></h1>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="d-flex align-items-center justify-content-end">
+                    <a class="btn btn-primary btn-square rounded-circle me-2" href="https://twitter.com/UPCedu" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-primary btn-square rounded-circle me-2" href="https://www.facebook.com/upcedu" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-primary btn-square rounded-circle me-2" href="https://www.linkedin.com/school/universidad-peruana-de-ciencias-aplicadas/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-primary btn-square rounded-circle" href="https://www.instagram.com/upcedu/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-5">
+        <a href="index.html" class="navbar-brand d-flex d-lg-none">
+            <h1 class="m-0 display-4 text-secondary">Wattify</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-auto py-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link active">Consumo</a>
+                <a href="service.html" class="nav-item nav-link">Ajustes</a>
+                <a href="product.html" class="nav-item nav-link">Tips</a>
+                <a href="product.html" class="nav-item nav-link">Nosotros</a> 
+                <a href="contact.html" class="nav-item nav-link">Contacto</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+      <!-- Features Start -->
+    <div class="container-fluid bg-grey feature py-5 pb-lg-0 mt-5" style="margin-bottom: 135px; margin-left: 0px;">
+        <div class="container py-5 pb-lg-0">
+            <div class="mx-auto text-center mb-3 pb-2" style="max-width: 500px;">
+                <h6 class="text-uppercase text-secondary">Gráfico</h6>
+                <h1 class="display-5 text-yellow">Consumo semanal</h1>
+                <h4 class="text-uppercase text-secondary"><span id="rangoSemana"></span></h4>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-12">
+                    <div class="d-block bg-white h-100 text-center p-5 pb-lg-0">
+                        <canvas id="barChart"></canvas>
+                        <div class="filter-container">
+                            <select id="filterSelect" onchange="applyFilter()">
+                                <option value="all">Mostrar todos</option>
+                                <option value="Lunes">Lunes</option>
+                                <option value="Martes">Martes</option>
+                                <option value="Miércoles">Miércoles</option>
+                                <option value="Jueves">Jueves</option>
+                                <option value="Viernes">Viernes</option>
+                                <option value="Sábado">Sábado</option>
+                                <option value="Domingo">Domingo</option>
+                            </select>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features Start -->
+
+          <!-- Features Start -->
+          <div class="container-fluid bg-grey feature py-5 pb-lg-0 mt-5" style="margin-bottom: 135px; margin-left: 0px; ">
+            <div class="container py-5 pb-lg-0">
+                <div class="mx-auto text-center mb-3 pb-2" style="max-width: 500px;">
+                    <h6 class="text-uppercase text-black">Gráfico</h6>
+                    <h1 class="display-5 text-yellow" style="margin-bottom: 0;">Consumo mensual</h1>
+                    <h3 class="text-uppercase text-black"><span id="mesActual"></span></h3>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-12">
+                        <div class="d-block bg-white h-100 text-center p-5 pb-lg-0">
+                            <div class="chart-container">
+                            <canvas id="pieChart"></canvas>
+                            </div>
+                        </div>                         
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Features Start -->
+
+          <!-- Features Start -->
+          <div class="container-fluid bg-grey feature py-5 pb-lg-0 mt-5" style="margin-bottom: 135px; margin-left: 0px;">
+            <div class="container py-5 pb-lg-0">
+                <div class="mx-auto text-center mb-3 pb-2" style="max-width: 500px;">
+                    <h6 class="text-uppercase text-secondary">Gráfico</h6>
+                    <h1 class="display-5 text-yellow">Consumo anual</h1>
+                    <h2 class="text-uppercase text-secondary"><span id="anioActual"></span></h2>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-12">
+                        <div class="d-block bg-white h-100 text-center p-5 pb-lg-0">
+                            <div class="my-chart-container">
+                                <canvas id="lineChart"></canvas>
+                            </div>
+                        </div>                         
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Features Start -->
+
+    <!-- Footer Start -->
+    
+    <div class="container-fluid bg-footer bg-primary text-white mt-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <h4 class="text-black mb-4">Contáctanos</h4>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-black me-2"></i>
+                                <p class="text-black mb-0">Prolongación Primavera 2390, Monterrico, Santiago de Surco</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-black me-2"></i>
+                                <p class="text-black mb-0">contacto@wattify.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-black me-2"></i>
+                                <p class="text-black mb-0">(01) 630-3333</p>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-secondary btn-square rounded-circle me-2" href="https://twitter.com/UPCedu" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-secondary btn-square rounded-circle me-2" href="https://www.facebook.com/upcedu" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-secondary btn-square rounded-circle me-2" href="https://www.linkedin.com/school/universidad-peruana-de-ciencias-aplicadas/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-secondary btn-square rounded-circle" href="https://www.instagram.com/upcedu/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <h4 class="text-black mb-4">Acceso Rápido</h4>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-black mb-2" href="#"><i class="bi bi-arrow-right text-black me-2"></i>Página principal</a>
+                                <a class="text-black mb-2" href="#"><i class="bi bi-arrow-right text-black me-2"></i>Acerca de Nosotros</a>
+                                <a class="text-black mb-2" href="#"><i class="bi bi-arrow-right text-black me-2"></i>Servicios</a>
+                                <a class="text-black mb-2" href="#"><i class="bi bi-arrow-right text-black me-2"></i>Membresías</a>
+                                <a class="text-black" href="#"><i class="bi bi-arrow-right text-black me-2"></i>Contáctanos</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <h4 class="text-black mb-4">Políticas y términos</h4>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-black mb-2" href="#"><i class="bi bi-arrow-right text-black me-2"></i>Términos y condiciones</a>
+                                <a class="text-black mb-2" href="#"><i class="bi bi-arrow-right text-black me-2"></i>Políticas de privacidad</a>
+                                <a class="text-black mb-2" href="#"><i class="bi bi-arrow-right text-black me-2"></i>Ética de la empresa</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-n5">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-secondary p-5">
+                        <h4 class="text-white">Newsletter</h4>
+                        <h6 class="text-white">Suscríbete para recibir noticias</h6>
+                        <p>Las últimas novedades de tecnología eco-amigable</p>
+                        <form action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control border-white p-3" placeholder="Su e-mail">
+                                <button class="btn btn-primary">Suscribirse</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/lib/easing/easing.min.js"></script>
+    <script src="assets/lib/waypoints/waypoints.min.js"></script>
+    <script src="assets/lib/counterup/counterup.min.js"></script>
+    <script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="assets/scripts/main.js"></script>
+    <script src="assets/scripts/graph.js"></script>
+</body>
+
+</html>
