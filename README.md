@@ -36,4 +36,12 @@ Nuestro primer segmento objetivo se caracteriza por ser residentes de la ciudad 
 Nuestro segundo segmento objetivo sería negocios pequeños (bodegas, bares, etc.) en la ciudad de lima que busquen reducir los gastos energía que consumen mediante sus dispositivos electrónicos (heladeras, ventiladores, etc.) y por la iluminación del lugar. 
 
 
-### Caracteristicas del proyecto
+### Principales caracteristicas ofrecidas por el proyecto
+
+- La plataforma se centrara en brindar al usuario una solución que le ayude a reducir el consumo energetico de su vivienda
+
+- Contara con una membresia que dara acceso a mayores cantidades de información que ayudara a nuestros clientes
+
+- Tambien se podra utilizar gratuitamente pero sin los radgos ofrecidos por las membresias
+
+- etc...
